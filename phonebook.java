@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Phonebook {
 
 
-    //creating a array to store contacts with maximum length of 200 contacts
+
     String[][] book = new String[200][2];
     Scanner scan = new Scanner(System.in);
 
@@ -47,7 +47,7 @@ public class Phonebook {
         System.out.print(message);
         String input = scan.nextLine();
 
-        if (!isAlpha(input))
+        if (!isAlpha(input)==true)
         {
             System.out.println("wrong input motherfucker, names should contain letters only");
             getString(message);
@@ -74,7 +74,7 @@ public class Phonebook {
 
     public void populate(int index,String name,String number)
     {
-        book[index][0]=name;
+        book[index][0]=name.toLowerCase();
         book[index][1]=number;
     }
 
@@ -82,7 +82,7 @@ public class Phonebook {
     {
         int valueIndex=-1;
         System.out.println("Please enter name: ");
-        String value=scan.nextLine();
+        String value=scan.nextLine().toLowerCase();
         for (int i=0; i<arr.length; i++)
         {
             if (value.equals(arr[i][0]))
