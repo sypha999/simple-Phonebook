@@ -47,7 +47,7 @@ public class Phonebook {
         System.out.print(message);
         String input = scan.nextLine();
 
-        if (!isAlpha(input)==true)
+        if (!isAlpha(input))
         {
             System.out.println("wrong input motherfucker, names should contain letters only");
             getString(message);
