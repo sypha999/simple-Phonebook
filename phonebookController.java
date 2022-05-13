@@ -11,9 +11,9 @@ public class PhonebookController {
         while (true) {
             input = scan.nextLine();
             if (phone.isNumeric(input)) {
-                if (input == "1") {
+                if (input.equals("1")) {
 
-                    String name = phone.getString("Please enter name: ");
+                    String name = phone.getString("Please enter name: ").toLowerCase();
                     String number = phone.getInt("Please enter number: ");
                     phone.populate(indexController, name, number);
                     indexController++;
@@ -22,13 +22,13 @@ public class PhonebookController {
                     System.out.println("Phone Number: " + number);
 
                     contStarter();
-                } else if (input == "2") {
+                } else if (input.equals("2")) {
                     phone.nameSearch(phone.book);
                     contStarter();
-                } else if (input == "3") {
+                } else if (input.equals("3")) {
                     phone.numberSearch(phone.book);
                     contStarter();
-                } else if (input == "4") {
+                } else if (input.equals("4")) {
                     System.exit(0);
                 } else {
                     System.out.println("Invalid input, restarting the program.\nAll saved data would be lost");
