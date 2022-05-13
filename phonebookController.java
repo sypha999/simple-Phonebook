@@ -5,35 +5,42 @@ public class PhonebookController {
         Scanner scan = new Scanner(System.in);
         Phonebook phone = new Phonebook();
         int indexController = 0;
-        int input;
+        String input;
 
             starter();
         while (true) {
-            input = scan.nextInt();
-            if (input == 1) {
+            input = scan.nextLine();
+            if (phone.isNumeric(input)) {
+                if (input == "1") {
 
-                String name = phone.getString("Please enter name: ");
-                String number = phone.getInt("Please enter number: ");
-                phone.populate(indexController, name, number);
-                indexController++;
-                System.out.println("\nContact Saved");
-                System.out.println("Name: " + name);
-                System.out.println("Phone Number: " + number);
+                    String name = phone.getString("Please enter name: ");
+                    String number = phone.getInt("Please enter number: ");
+                    phone.populate(indexController, name, number);
+                    indexController++;
+                    System.out.println("\nContact Saved");
+                    System.out.println("Name: " + name);
+                    System.out.println("Phone Number: " + number);
 
-                contStarter();
-            } else if (input == 2) {
-                phone.nameSearch(phone.book);
-                contStarter();
-            } else if (input == 3) {
-                phone.numberSearch(phone.book);
-                contStarter();
-            } else if (input == 4) {
-                System.exit(0);
-            } else{
-            System.out.println("Invalid input, restarting the program");
-            main(null);}
-           
+                    contStarter();
+                } else if (input == "2") {
+                    phone.nameSearch(phone.book);
+                    contStarter();
+                } else if (input == "3") {
+                    phone.numberSearch(phone.book);
+                    contStarter();
+                } else if (input == "4") {
+                    System.exit(0);
+                } else {
+                    System.out.println("Invalid input, restarting the program.\nAll saved data would be lost");
+                    main(null);
+                }
+            }
 
+            else
+            {
+                System.out.println("Invalid input, restarting the program.\nAll saved data would be lost");
+                main(null);
+            }
         }
     }
 
