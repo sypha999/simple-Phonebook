@@ -29,7 +29,10 @@ public class PhonebookController {
                 contStarter();
             } else if (input == 4) {
                 System.exit(0);
-            }
+            } else{
+            System.out.println("Invalid input, restarting the program");
+            main(null);}
+           
 
         }
     }
