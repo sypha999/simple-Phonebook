@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Phonebook {
 
 
-
+    //creating a array to store contacts with maximum length of 200 contacts
     String[][] book = new String[200][2];
     Scanner scan = new Scanner(System.in);
 
